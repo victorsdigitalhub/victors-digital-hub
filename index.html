@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Victor's Digital Hub — ebooks, ebook covers, flyers, graphic design, logos and business cards.">
+  <title>Victor's Digital Hub | Digital Creativity</title>
+  <style>
+    :root{--bg:#080d1b;--panel:#101a31;--panel2:#131f3b;--text:#f5f7ff;--muted:#b5bfd6;--blue:#42a5ff;--purple:#9a6bff;--line:rgba(255,255,255,.12)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:Arial,Helvetica,sans-serif;background:radial-gradient(circle at 80% 5%,#20204b 0,transparent 28%),radial-gradient(circle at 5% 35%,#102e50 0,transparent 25%),var(--bg);color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(8,13,27,.9);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:900;letter-spacing:.5px;font-size:1.05rem}.brand span{color:var(--blue)}
+    .navlinks{display:flex;gap:22px;color:var(--muted);font-size:.92rem}
+    .navlinks a:hover{color:white}
+    .menu{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 12px;border-radius:9px;font-size:1.1rem}
+    .hero{padding:86px 0 74px;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:42px}
+    .tag{display:inline-block;border:1px solid rgba(66,165,255,.45);background:rgba(66,165,255,.1);color:#a9d8ff;padding:7px 13px;border-radius:30px;font-size:.8rem;margin-bottom:20px}
+    h1{font-size:clamp(2.5rem,6vw,4.7rem);line-height:1.06;letter-spacing:-2px;margin-bottom:20px}
+    h1 span{background:linear-gradient(90deg,var(--blue),#b68aff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero p{max-width:610px;color:var(--muted);font-size:1.08rem;margin-bottom:27px}
+    .buttons{display:flex;gap:13px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:13px 20px;border-radius:12px;font-weight:800;border:1px solid var(--line);transition:.2s}
+    .btn.primary{background:linear-gradient(100deg,#168bea,#7957ec);border:0;box-shadow:0 10px 30px rgba(53,132,255,.22)}
+    .btn:hover{transform:translateY(-2px)}
+    .hero-card{min-height:330px;border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:26px;background:linear-gradient(145deg,rgba(66,165,255,.18),rgba(154,107,255,.15)),var(--panel);box-shadow:0 25px 70px rgba(0,0,0,.3);display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative}
+    .hero-card:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));filter:blur(3px);opacity:.25;right:-70px;top:-70px}
+    .visual-label{font-size:.8rem;color:#b9dfff;letter-spacing:2px;text-transform:uppercase;position:relative;z-index:1}
+    .visual-title{font-size:2.3rem;line-height:1.1;font-weight:900;max-width:280px;position:relative;z-index:1}
+    .visual-bottom{display:flex;justify-content:space-between;align-items:end;position:relative;z-index:1;color:var(--muted);font-size:.85rem}
+    section{padding:65px 0}
+    .section-head{text-align:center;margin-bottom:35px}
+    .section-head h2{font-size:clamp(1.8rem,4vw,2.6rem);margin-bottom:8px}
+    .section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:18px;padding:23px}
+    .icon{width:45px;height:45px;display:grid;place-items:center;border-radius:13px;background:rgba(66,165,255,.14);font-size:1.35rem;margin-bottom:15px}
+    .card h3{margin-bottom:8px}.card p{color:var(--muted);font-size:.94rem}
+    .price{color:#9bd4ff;font-weight:900;font-size:1.2rem;margin-top:12px}
+    .note{text-align:center;color:var(--muted);margin-top:20px;font-size:.9rem}
+    .reasons .card{padding:25px}
+    .number{font-size:1.7rem;font-weight:900;color:var(--blue);margin-bottom:8px}
+    .showcase{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .sample{height:205px;border-radius:17px;border:1px solid var(--line);padding:20px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+    .sample:nth-child(1){background:linear-gradient(145deg,#132c50,#5d3d9c)}
+    .sample:nth-child(2){background:linear-gradient(145deg,#163d47,#126c86)}
+    .sample:nth-child(3){background:linear-gradient(145deg,#4a214f,#bd5b78)}
+    .sample small{letter-spacing:2px;text-transform:uppercase;font-weight:bold}
+    .sample strong{font-size:1.65rem;line-height:1.1;max-width:210px}
+    .sample span{font-size:.8rem;color:#e0e8ff}
+    .cta{border:1px solid rgba(66,165,255,.3);border-radius:25px;padding:42px 25px;text-align:center;background:linear-gradient(120deg,rgba(23,125,210,.2),rgba(125,79,220,.2))}
+    .cta h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:10px}.cta p{color:var(--muted);margin:0 auto 22px;max-width:600px}
+    footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:.88rem;text-align:center}
+    @media(max-width:760px){.hero{grid-template-columns:1fr;padding:60px 0}.hero-card{min-height:260px}.grid,.showcase{grid-template-columns:1fr 1fr}.navlinks{display:none;position:absolute;top:71px;left:0;right:0;background:#0b1326;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.menu{display:block}}
+    @media(max-width:520px){.grid,.showcase{grid-template-columns:1fr}h1{letter-spacing:-1px}.hero{gap:25px}section{padding:48px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#home">VICTOR'S <span>DIGITAL HUB</span></a>
+      <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
+      <div class="navlinks" id="navLinks">
+        <a href="#services">Services</a><a href="#prices">Prices</a><a href="#portfolio">Showcase</a><a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero" id="home">
+    <div>
+      <div class="tag">CREATIVITY • DESIGN • DIGITAL SOLUTIONS</div>
+      <h1>We turn ideas into <span>visual creativity.</span></h1>
+      <p>Welcome to Victor's Digital Hub — your creative partner for professional designs and digital products that help your ideas stand out.</p>
+      <div class="buttons">
+        <a class="btn primary" href="https://wa.me/2348106393054?text=good%20day%20Victor%27s%20digital%20hub" target="_blank" rel="noopener">Book a Slot Now ↗</a>
+        <a class="btn" href="#services">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="visual-label">Your ideas, our creativity</div>
+      <div class="visual-title">MAKE YOUR BRAND IMPOSSIBLE TO IGNORE.</div>
+      <div class="visual-bottom"><span>VICTOR'S DIGITAL HUB</span><span>DESIGN • CREATE • GROW</span></div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head"><h2>What We Do</h2><p>Creative services to give your ideas a professional look.</p></div>
+      <div class="grid">
+        <article class="card"><div class="icon">📘</div><h3>E-books</h3><p>Digital book creation to help present and share your knowledge.</p></article>
+        <article class="card"><div class="icon">🎨</div><h3>E-book Cover Creation</h3><p>Eye-catching covers designed to make your e-book stand out.</p></article>
+        <article class="card"><div class="icon">🖼️</div><h3>Flyer & Graphic Design</h3><p>Creative graphics for promotions, announcements and businesses.</p></article>
+        <article class="card"><div class="icon">✦</div><h3>Logo Creation</h3><p>Distinctive logo concepts to give your brand a recognisable identity.</p></article>
+        <article class="card"><div class="icon">💳</div><h3>Business Card Design</h3><p>Professional business cards that make sharing your contact details easy.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="prices">
+    <div class="wrap">
+      <div class="section-head"><h2>Our Price Guide</h2><p>Clear starting prices for selected services.</p></div>
+      <div class="grid">
+        <article class="card"><h3>Graphic Design</h3><p>Flyers and other graphic design projects.</p><div class="price">From ₦3,000 / $3</div></article>
+        <article class="card"><h3>E-book Cover Creation</h3><p>Custom cover design for your digital book.</p><div class="price">₦3,000 / $3</div></article>
+        <article class="card"><h3>Other Services</h3><p>Ask us for a quote based on your project requirements.</p><div class="price">Contact for pricing</div></article>
+      </div>
+      <p class="note">Prices may vary depending on size and project requirements. Send us a message for more details.</p>
+    </div>
+  </section>
+
+  <section class="reasons">
+    <div class="wrap">
+      <div class="section-head"><h2>Why Work With Us?</h2><p>We focus on making your ideas look their best.</p></div>
+      <div class="grid">
+        <article class="card"><div class="number">01</div><h3>Creative Approach</h3><p>We aim to give every project a fresh and memorable visual direction.</p></article>
+        <article class="card"><div class="number">02</div><h3>Professional Presentation</h3><p>We create clean, organised designs that communicate your message clearly.</p></article>
+        <article class="card"><div class="number">03</div><h3>Easy Booking</h3><p>Contact us directly on WhatsApp to discuss your design needs.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-head"><h2>Creative Showcase</h2><p>A preview of the kinds of visual projects we create.</p></div>
+      <div class="showcase">
+        <div class="sample"><small>Brand identity</small><strong>BUILD YOUR BRAND</strong><span>Logo & business design</span></div>
+        <div class="sample"><small>Digital publishing</small><strong>YOUR STORY, BEAUTIFULLY TOLD</strong><span>E-book & cover design</span></div>
+        <div class="sample"><small>Promotional graphics</small><strong>MAKE IT STAND OUT</strong><span>Flyer & graphic design</span></div>
+      </div>
+      <p class="note">These are visual previews. Contact us to request examples of completed projects.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta">
+        <h2>Ready to bring your idea to life?</h2>
+        <p>Let's discuss your next design project. Send Victor's Digital Hub a message on WhatsApp to book a slot.</p>
+        <a class="btn primary" href="https://wa.me/2348106393054?text=good%20day%20Victor%27s%20digital%20hub" target="_blank" rel="noopener">Chat With Us on WhatsApp ↗</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© <span id="year"></span> Victor's Digital Hub. All rights reserved.</div></footer>
+<script>
+  const menuBtn=document.getElementById('menuBtn');
+  const navLinks=document.getElementById('navLinks');
+  menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('open')));
+  document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
